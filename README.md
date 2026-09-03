@@ -40,13 +40,15 @@ I implemented a multi-layered security strategy to mitigate these risks. I trans
 #### 3. Intrusion Prevention (Fail2Ban)
 * Deployed **Fail2Ban** to monitor authentication logs.
 * Configured a 1-hour ban for any IP failing 3 login attempts.
-> <img width="1920" height="1019" alt="Screenshot from 2026-09-03 11-40-29" src="https://github.com/user-attachments/assets/c66624cb-41d9-4310-a65a-6bd2bdba2038" />
+> <img width="1478" height="339" alt="Screenshot from 2026-09-03 11-41-15" src="https://github.com/user-attachments/assets/6a4ca452-2f70-4f52-8ac5-b9f6eaadc19a" />
+
 
 
 #### 4. Centralized Monitoring (AWS CloudWatch)
 * Integrated the **CloudWatch Agent** to stream `/var/log/auth.log` to AWS Logs.
 * *Benefit:* Provides a tamper-proof audit trail even if the server is deleted.
-> <img width="1920" height="1019" alt="Screenshot from 2026-09-03 11-40-29" src="https://github.com/user-attachments/assets/65081f5c-f92c-4be2-9077-4066340de465" />
+> <img width="1920" height="966" alt="Screenshot from 2026-09-03 11-42-47" src="https://github.com/user-attachments/assets/fb18327b-ecb2-4981-a549-af0032138d63" />
+
 
 
 #### 5. Automated Maintenance
@@ -67,7 +69,8 @@ The system was audited using **Lynis**, an industry-standard security auditing t
 
 ### ✅ Final Validation
 Successfully connected to the hardened server using the custom port and SSH keys.
-> *(SS 5: Terminal login success wala image yahan drag karein)*
+> <img width="1211" height="734" alt="Screenshot from 2026-09-03 11-45-07" src="https://github.com/user-attachments/assets/17eb220a-3a13-42f6-9279-83bd5ad2a933" />
+
 
 ---
 
