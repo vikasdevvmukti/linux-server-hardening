@@ -22,45 +22,48 @@ I implemented a multi-layered security strategy to mitigate these risks. I trans
 
 ---
 
-### 🛠️ Execution Steps (How I did it)
+### 🛠️ Execution Steps & Visual Proof
 
 #### 1. Access Control (SSH Hardening)
-* Migrated SSH from the default Port 22 to a **custom non-standard port (2222)**.
+* Migrated SSH from the default Port 22 to a **custom port (2222)**.
 * Disabled `root` login and enforced **Key-Pair only authentication**.
-* *Benefit:* Eliminates 99% of automated bot scans.
+* **Visual Proof:** Security Group restricted to custom port.
+> *(SS 6: AWS Security Grou<img width="1914" height="636" alt="Screenshot from 2026-09-03 11-46-11" src="https://github.com/user-attachments/assets/cbe4746b-8c31-4690-92d9-db07717fd645" />
+p wala image yahan drag karein)*
 
 #### 2. Network Guard (UFW Firewall)
 * Implemented a **"Deny-by-Default"** policy.
 * Strictly allowed only ports 2222 (SSH), 80 (HTTP), and 443 (HTTPS).
-* *Benefit:* Prevents hackers from finding "backdoors" in unmonitored services.
+> *(SS 3: UFW status verbose wala image yahan drag karein)*
 
 #### 3. Intrusion Prevention (Fail2Ban)
 * Deployed **Fail2Ban** to monitor authentication logs.
 * Configured a 1-hour ban for any IP failing 3 login attempts.
-* *Benefit:* Stops brute-force attacks in their tracks.
+> *(SS 2: Fail2Ban status sshd wala image yahan drag karein)*
 
 #### 4. Centralized Monitoring (AWS CloudWatch)
-* Integrated the **CloudWatch Agent** to stream `/var/log/auth.log`.
-* Created a centralized log group for security auditing.
+* Integrated the **CloudWatch Agent** to stream `/var/log/auth.log` to AWS Logs.
 * *Benefit:* Provides a tamper-proof audit trail even if the server is deleted.
+> *(SS 4: CloudWatch Logs wala image yahan drag karein)*
 
 #### 5. Automated Maintenance
 * Enabled **Unattended-Upgrades** for daily security patches.
-* *Benefit:* The server protects itself from new "Zero-day" exploits without manual work.
+* *Benefit:* The server protects itself from new exploits without manual work.
 
 ---
 
-### 📊 The Proof (Audit Results)
-I used **Lynis**, a leading industry-standard security tool, to verify the hardening results.
+### 📊 Security Audit Results
+The system was audited using **Lynis**, an industry-standard security auditing tool.
 
-* **Security Hardening Index: 66 (High)**
+* **Final Hardening Index: 66 (High)**
 * **Status:** Successfully passed 250+ security checks.
+> *(SS 1: Lynis Audit Score wala image yahan drag karein)*
 
 ---
 
-### 🚀 Visual Evidence
-
-*(Tip: Drag and drop your blurred images here)*
+### ✅ Final Validation
+Successfully connected to the hardened server using the custom port and SSH keys.
+> *(SS 5: Terminal login success wala image yahan drag karein)*
 
 ---
 
