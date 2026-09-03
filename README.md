@@ -33,7 +33,7 @@ I implemented a multi-layered security strategy to mitigate these risks. I trans
 
 #### 2. Network Guard (UFW Firewall)
 * Implemented a **"Deny-by-Default"** policy.
-* Strictly allowed only ports 2222 (SSH), 80 (HTTP), and 443 (HTTPS).
+* Strictly allowed only ports 2222 (SSH).
 > <img width="1478" height="339" alt="Screenshot from 2026-09-03 11-41-38" src="https://github.com/user-attachments/assets/905dbf17-6e67-49d5-8cff-6d116e76b1ad" />
 
 
@@ -76,7 +76,7 @@ Successfully connected to the hardened server using the custom port and SSH keys
 
 ### 🧰 Tools & Technologies
 * **Infrastructure:** AWS EC2, IAM, Security Groups.
-* **Operating System:** Ubuntu 24.04 LTS.
+* **Operating System:** Ubuntu 26.04.1 LTS.
 * **Security Suite:** Fail2Ban, UFW, Unattended-Upgrades.
 * **Auditing:** Lynis.
 * **Monitoring:** AWS CloudWatch Logs.
