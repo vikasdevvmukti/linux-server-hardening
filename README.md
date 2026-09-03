@@ -28,23 +28,26 @@ I implemented a multi-layered security strategy to mitigate these risks. I trans
 * Migrated SSH from the default Port 22 to a **custom port (2222)**.
 * Disabled `root` login and enforced **Key-Pair only authentication**.
 * **Visual Proof:** Security Group restricted to custom port.
-> *(SS 6: AWS Security Grou<img width="1914" height="636" alt="Screenshot from 2026-09-03 11-46-11" src="https://github.com/user-attachments/assets/cbe4746b-8c31-4690-92d9-db07717fd645" />
-p wala image yahan drag karein)*
+> <img width="1914" height="636" alt="Screenshot from 2026-09-03 11-46-11" src="https://github.com/user-attachments/assets/cbe4746b-8c31-4690-92d9-db07717fd645" />
+
 
 #### 2. Network Guard (UFW Firewall)
 * Implemented a **"Deny-by-Default"** policy.
 * Strictly allowed only ports 2222 (SSH), 80 (HTTP), and 443 (HTTPS).
-> *(SS 3: UFW status verbose wala image yahan drag karein)*
+> <img width="1478" height="339" alt="Screenshot from 2026-09-03 11-41-38" src="https://github.com/user-attachments/assets/905dbf17-6e67-49d5-8cff-6d116e76b1ad" />
+
 
 #### 3. Intrusion Prevention (Fail2Ban)
 * Deployed **Fail2Ban** to monitor authentication logs.
 * Configured a 1-hour ban for any IP failing 3 login attempts.
-> *(SS 2: Fail2Ban status sshd wala image yahan drag karein)*
+> <img width="1920" height="1019" alt="Screenshot from 2026-09-03 11-40-29" src="https://github.com/user-attachments/assets/c66624cb-41d9-4310-a65a-6bd2bdba2038" />
+
 
 #### 4. Centralized Monitoring (AWS CloudWatch)
 * Integrated the **CloudWatch Agent** to stream `/var/log/auth.log` to AWS Logs.
 * *Benefit:* Provides a tamper-proof audit trail even if the server is deleted.
-> *(SS 4: CloudWatch Logs wala image yahan drag karein)*
+> <img width="1920" height="1019" alt="Screenshot from 2026-09-03 11-40-29" src="https://github.com/user-attachments/assets/65081f5c-f92c-4be2-9077-4066340de465" />
+
 
 #### 5. Automated Maintenance
 * Enabled **Unattended-Upgrades** for daily security patches.
@@ -57,7 +60,8 @@ The system was audited using **Lynis**, an industry-standard security auditing t
 
 * **Final Hardening Index: 66 (High)**
 * **Status:** Successfully passed 250+ security checks.
-> *(SS 1: Lynis Audit Score wala image yahan drag karein)*
+> <img width="1920" height="1019" alt="Screenshot from 2026-09-03 11-40-29" src="https://github.com/user-attachments/assets/b0ed37cc-c864-4a2d-a337-0fe4c4ac2ebc" />
+
 
 ---
 
